@@ -52,7 +52,6 @@ export class ArticleComponent implements OnInit {
             this.currentUser = userData;
             this.canModify =
               this.currentUser.username === this.article.author.username;
-            this.cd.detectChanges();
           });
         },
         () => {
@@ -94,7 +93,6 @@ export class ArticleComponent implements OnInit {
   populateComments() {
     this.commentsService.getAll(this.article.slug).subscribe((comments) => {
       this.comments = comments;
-      this.cd.detectChanges();
     });
   }
 
@@ -108,12 +106,10 @@ export class ArticleComponent implements OnInit {
         this.comments.unshift(comment);
         this.commentControl.reset('');
         this.isSubmitting = false;
-        this.cd.detectChanges();
       },
       (errors) => {
         this.isSubmitting = false;
         this.commentFormErrors = errors;
-        this.cd.detectChanges();
       }
     );
   }
@@ -123,7 +119,6 @@ export class ArticleComponent implements OnInit {
       .destroy(comment.id, this.article.slug)
       .subscribe((success) => {
         this.comments = this.comments.filter((item) => item !== comment);
-        this.cd.markForCheck();
       });
   }
 }

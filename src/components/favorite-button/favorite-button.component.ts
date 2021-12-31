@@ -39,7 +39,7 @@ export class FavoriteButtonComponent {
       .pipe(
         concatMap((authenticated) => {
           // Not authenticated? Push to login screen
-          if (!authenticated) {            
+          if (!authenticated) {
             wx.navigateTo({ url: '/pages/login/login-entry' });
             return of(null);
           }
@@ -70,8 +70,6 @@ export class FavoriteButtonComponent {
           }
         })
       )
-      .subscribe(() => {
-        this.cd.detectChanges()
-      });
+      .subscribe(() => {});
   }
 }

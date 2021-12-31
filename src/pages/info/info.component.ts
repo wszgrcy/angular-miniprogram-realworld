@@ -31,7 +31,6 @@ export class InfoComponent implements OnInit {
         this.profilesService.get(userData.username).subscribe((profile) => {
           this.profile = profile;
           this.loadingDone = true;
-          this.cd.detectChanges();
         });
       });
     });

@@ -36,7 +36,6 @@ export class ArticlePreviewComponent {
     }
   }
   ngOnChanges(changes: SimpleChanges): void {
-    this.cd.detectChanges();
   }
   openArticle() {
     wx.navigateTo({

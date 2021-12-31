@@ -58,7 +58,6 @@ export class ArticleListComponent {
         (val, index) => index + 1
       );
       
-      this.cd.detectChanges();
     });
   }
 }

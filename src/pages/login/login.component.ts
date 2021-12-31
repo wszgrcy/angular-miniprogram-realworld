@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
       (err) => {        
         this.errors = err;
         this.isSubmitting = false;
-        this.cd.markForCheck();
       }
     );
   }

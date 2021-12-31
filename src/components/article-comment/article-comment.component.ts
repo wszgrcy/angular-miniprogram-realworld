@@ -38,7 +38,6 @@ export class ArticleCommentComponent implements OnInit {
     this.subscription = this.userService.currentUser.subscribe(
       (userData: User) => {
         this.canModify = userData.username === this.comment.author.username;
-        this.cd.markForCheck();
       }
     );
   }
