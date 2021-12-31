@@ -9,7 +9,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-miniprogram-template": {
+    "angular-miniprogram-realworld": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -31,10 +31,22 @@
                 "glob": "**/*.entry.ts",
                 "input": "./src/pages",
                 "output": "pages"
+              },
+              {
+                "glob": "index.ts",
+                "input": "./src/tab-bar",
+                "output": "custom-tab-bar"
+              }
+            ],
+            "components":[
+              {
+                "glob": "**/*.entry.ts",
+                "input": "./src/components",
+                "output": "components"
               }
             ],
             "platform": "wx",
-            "outputPath": "dist/angular-miniprogram-template",
+            "outputPath": "dist/angular-miniprogram-realworld",
             "index": "",
             "main": "src/main.ts",
             "polyfills": "",
@@ -95,10 +107,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-miniprogram-template:build:production"
+              "browserTarget": "angular-miniprogram-realworld:build:production"
             },
             "development": {
-              "browserTarget": "angular-miniprogram-template:build:development"
+              "browserTarget": "angular-miniprogram-realworld:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -106,7 +118,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-miniprogram-template:build"
+            "browserTarget": "angular-miniprogram-realworld:build"
           }
         },
         "test": {
@@ -153,5 +165,5 @@
       }
     }
   },
-  "defaultProject": "angular-miniprogram-template"
+  "defaultProject": "angular-miniprogram-realworld"
 }

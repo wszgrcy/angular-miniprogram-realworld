@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+.tag-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+.tag-default.tag-outline {
+  border: 1px solid #ddd;
+  color: #aaa !important;
+  background: 0 0 !important;
+}
+.tag-default {
+  font-weight: 300;
+  font-size: 0.8rem !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.author-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+.author {
+  color: #5cb85c;
+  text-decoration: none;
+  font-weight: 500;
+}
+.card-block {
+  padding: 0.5rem;
+}
+.card {
+  margin: 0.5rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 1px;
+}
+.card-footer {
+  padding: 0.5rem;
+  display: flex;
+  background-color: #f5f5f5;
+  align-items: center;
+}

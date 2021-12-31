@@ -1,7 +1,27 @@
 {
   "pages": [
-    "pages/page1/page1-entry"
+    "pages/page1/page1-entry",
+    "pages/info/info-entry",
+    "pages/article/article-entry",
+    "pages/login/login-entry"
   ],
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/page1/page1-entry",
+        "text": "list"
+      },
+      {
+        "pagePath": "pages/info/info-entry",
+        "text": "接口"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

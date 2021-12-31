@@ -191,27 +191,6 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser-dynamic@13.0.2":
-  version "13.0.2"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-13.0.2.tgz#596dfbf5041210d2ecb959d2f298e86940a2adec"
-  integrity sha512-2wZX2oop3A1kWFcbRYqe8AxBQjT35DXf1qlGyFQoMn7D0vOAprg6X1hUK2XBItRrvwRWh3hSVhzkustTIl+r6g==
-  dependencies:
-    tslib "^2.3.0"
-
-"@angular/platform-browser@13.0.2":
-  version "13.0.2"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-13.0.2.tgz#b4fd97e67321e15a4b6d3f0dcb10b11e8f024cb5"
-  integrity sha512-fkLGr9Vj2cvFzXefyhNaqwXX90+WbpYj5cCii7S1HcbJ9qSM5ZenLp1t8mGRhmWI7odY4BrFskWOChlWFrLEkA==
-  dependencies:
-    tslib "^2.3.0"
-
-"@angular/router@13.0.2":
-  version "13.0.2"
-  resolved "https://registry.yarnpkg.com/@angular/router/-/router-13.0.2.tgz#08f80a55d594fdc1c3e75f8fffacff6d4121a5ce"
-  integrity sha512-AfmT845dcYPvNbUdV2ALlf++szZP3ie2d0eu7JyGWe3anV1fbDcg76RhjxFK8yVUxryrCQtEnot1VEEVlhGkyw==
-  dependencies:
-    tslib "^2.3.0"
-
 "@assemblyscript/loader@^0.10.1":
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/@assemblyscript/loader/-/loader-0.10.1.tgz#70e45678f06c72fa2e350e8553ec4a4d72b92e06"
@@ -1928,10 +1907,10 @@ ajv@^8.8.0:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-angular-miniprogram@1.0.0-alpha.0:
-  version "1.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/angular-miniprogram/-/angular-miniprogram-1.0.0-alpha.0.tgz#1b761b9d66d7a64af984618b70ad401790fecdeb"
-  integrity sha512-lg+mc4Oz7mdicRmZUingQ+O6gSCBEOy9rpEJPwsDqfGk94U647oi0DujM5W855VN3EoSrnqviOlPkznbXRBqRQ==
+angular-miniprogram@1.0.0-alpha.7:
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/angular-miniprogram/-/angular-miniprogram-1.0.0-alpha.7.tgz#30cf92a13a2b2c74b3db130b36fce3a665772fe7"
+  integrity sha512-5vdckjwMv0gK2fJ06UaCDSVmlO4CbazLOCdPTb5l6wViFkM6TN0tCzjoTrPqY2WV/Maaz/IottTTKul9QqG+cw==
   dependencies:
     cyia-code-util "1.3.7"
     static-injector "1.0.9"

@@ -1,0 +1,9 @@
+.nav {
+  display: flex;
+}
+.nav-item {
+  flex: 1 1 0;
+}
+.nav-link.active {
+  color: #5cb85c;
+}

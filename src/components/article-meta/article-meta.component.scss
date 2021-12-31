@@ -1,0 +1,16 @@
+
+.article-meta {
+  display: flex;
+}
+.action {
+  flex: 0 0 auto;
+}
+.info {
+  flex: 1 1 0;
+  margin: 0 2px;
+}
+.date {
+  color: #bbb;
+  font-size: 0.8rem;
+  display: block;
+}

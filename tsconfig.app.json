@@ -9,9 +9,11 @@
   },
   "files": [
     "src/main.ts",
+    "src/tab-bar/index.ts",
   ],
   "include": [
     "src/pages/**/*.entry.ts",
+    "src/components/**/*.entry.ts",
     "src/**/*.d.ts"
   ]
 }

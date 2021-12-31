@@ -1,0 +1,26 @@
+<div class="article-meta">
+  <!-- todo 链接跳转 -->
+
+    <image
+      class="author-image"
+      [src]="
+        article.author.image ||
+        'https://static.productionready.io/images/smiley-cyrus.jpg'
+      "
+      alt="author image"
+    ></image>
+
+
+  <div class="info">
+    <span class="author">
+      {{ article.author.username }}
+    </span>
+    <span class="date">
+      {{ article.createdAt | date: "longDate" }}
+    </span>
+  </div>
+<div class="action">
+  <ng-content></ng-content>
+
+</div>
+</div>

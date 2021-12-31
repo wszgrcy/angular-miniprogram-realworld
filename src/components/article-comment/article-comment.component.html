@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-block">
+    <p class="card-text">
+      {{ comment.body }}
+    </p>
+  </div>
+  <div class="card-footer">
+    <a class="comment-author">
+      <image
+        [src]="
+          comment.author.image ||
+          'https://static.productionready.io/images/smiley-cyrus.jpg'
+        "
+        alt="author image"
+        class="author-image"
+      ></image>
+    </a>
+    &nbsp;
+    <a class="author">
+      {{ comment.author.username }}
+    </a>
+    <span class="date-posted">
+      {{ comment.createdAt | date: "longDate" }}
+    </span>
+    <span class="mod-options" [hidden]="!canModify">
+      <i class="ion-trash-a" (click)="deleteClicked()"></i>
+    </span>
+  </div>
+</div>

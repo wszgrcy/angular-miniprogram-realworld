@@ -1,0 +1,17 @@
+<cover-view class="tab-bar">
+  <cover-view class="tab-bar-border"></cover-view>
+  <cover-view
+    *ngFor="let item of list; let index = index"
+    class="tab-bar-item"
+    (tap)="switchTab(item, index)"
+  >
+    <!-- <cover-image
+      [src]="selected === index ? item.selectedIconPath : item.iconPath"
+    ></cover-image> -->
+    <cover-view
+      [class.active]="selected === index"
+      [style.color]="selected === index ? selectedColor : color"
+      >{{ item.text }}</cover-view
+    >
+  </cover-view>
+</cover-view>

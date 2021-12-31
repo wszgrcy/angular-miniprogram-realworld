@@ -1,0 +1,101 @@
+<ng-container *ngIf="loadingDone">
+  <div class="article-page">
+    <div class="banner">
+      <div class="container">
+        <h1 class="title">{{ article.title }}</h1>
+
+        <app-article-meta [article]="article">
+          <span *ngIf="canModify">
+            <!-- // todo 可以编辑 -->
+            <a class="btn btn-sm btn-outline-secondary">
+              <i class="ion-edit"></i> Edit Article
+            </a>
+
+            <button
+              class="btn btn-sm btn-outline-danger"
+              [ngClass]="{ disabled: isDeleting }"
+              (click)="deleteArticle()"
+            >
+              <i class="ion-trash-a"></i> Delete Article
+            </button>
+          </span>
+
+          <span *ngIf="!canModify">
+            <!-- <app-follow-button
+              [profile]="article.author"
+              (toggle)="onToggleFollowing($event)">
+            </app-follow-button> -->
+
+            <app-favorite-button
+              [article]="article"
+              (toggle)="onToggleFavorite($event)"
+            >
+              {{ article.favorited ? "Unfavorite" : "Favorite" }} Article
+              <span class="counter">({{ article.favoritesCount }})</span>
+            </app-favorite-button>
+          </span>
+        </app-article-meta>
+      </div>
+    </div>
+
+    <div class="container page">
+      <div class="row article-content">
+        <div class="col-md-12">
+          <view>{{ article.body }}</view>
+          <ul class="tag-list">
+            <li
+              *ngFor="let tag of article.tagList; trackBy: trackByFn"
+              class="tag-default tag-pill tag-outline"
+            >
+              {{ tag }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2">
+        <div class="card comment-form" *ngIf="isAuthenticated">
+          <fieldset [disabled]="isSubmitting">
+            <div class="card-block">
+              <textarea
+                class="form-control"
+                placeholder="Write a comment..."
+                rows="3"
+                [formControl]="commentControl"
+              ></textarea>
+            </div>
+            <div class="card-footer">
+              <img
+                [src]="
+                  currentUser.image ||
+                  'https://static.productionready.io/images/smiley-cyrus.jpg'
+                "
+                alt="user image"
+                class="comment-author-img"
+              />
+              <button
+                class="btn btn-sm btn-primary"
+                type="submit"
+                (tap)="addComment()"
+              >
+                Post Comment
+              </button>
+            </div>
+          </fieldset>
+        </div>
+        <ng-container *ngIf="comments">
+          <app-article-comment
+            *ngFor="let comment of comments; trackBy: trackByFn"
+            [comment]="comment"
+            (deleteComment)="onDeleteComment(comment)"
+          >
+          </app-article-comment>
+        </ng-container>
+
+        <!-- </ng-container> -->
+      </div>
+    </div>
+  </div>
+</ng-container>

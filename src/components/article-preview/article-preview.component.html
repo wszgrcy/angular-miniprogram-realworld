@@ -1,0 +1,27 @@
+<div class="article-preview">
+  <app-article-meta [article]="article">
+    <app-favorite-button
+      [article]="article"
+      (toggle)="onToggleFavorite($event)"
+      class="pull-xs-right"
+    >
+      {{ article.favoritesCount }}
+    </app-favorite-button>
+  </app-article-meta>
+  <!-- todo 跳转 -->
+  <a class="preview-link" (tap)="openArticle()">
+    <h1>{{ article.title }}</h1>
+    <p class="article-description">{{ article.description }}</p>
+    <div class="footer">
+      <span class="read-more">Read more...</span>
+      <div class="tag-list">
+        <span
+          class="tag-default tag-pill tag-outline"
+          *ngFor="let tag of article.tagList"
+        >
+          {{ tag }}
+        </span>
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,2 +1,34 @@
-你好,{{user}},这是使用angular开发小程序的一个模板项目
-<lib-first></lib-first>
+<div class="col-md-9">
+  <div class="feed-toggle">
+    <div class="nav nav-pills outline-active">
+      <div class="nav-item">
+        <view
+          class="nav-link"
+          [ngClass]="{ active: listConfig.type === 'feed' }"
+          (tap)="setListTo('feed')"
+        >
+          Your Feed
+        </view>
+      </div>
+      <div class="nav-item">
+        <view
+          class="nav-link"
+          [ngClass]="{
+            active: listConfig.type === 'all' && !listConfig.filters.tag
+          }"
+          (tap)="setListTo('all')"
+        >
+          Global Feed
+        </view>
+      </div>
+      <!-- <div class="nav-item" [hidden]="!listConfig.filters.tag"> -->
+      <!-- <a class="nav-link active">
+          <i class="ion-pound"></i> {{ listConfig.filters.tag }}
+        </a> -->
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+<div *ngIf="loadingDone">
+  <app-article-list [config]="listConfig" [limit]="10"></app-article-list>
+</div>

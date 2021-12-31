@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { DoBootstrap } from '@angular/core';
-import { MiniProgramModule } from 'angular-miniprogram';
+import { HttpClientModule, MiniProgramModule } from 'angular-miniprogram';
+import { HTTP_INTERCEPTORS } from 'angular-miniprogram/common/http';
+import { HttpTokenInterceptor, UserService } from './service';
 @NgModule({
   declarations: [],
-  imports: [MiniProgramModule],
+  imports: [MiniProgramModule, HttpClientModule],
   exports: [],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
+  ],
 })
 export class MainModule implements DoBootstrap {
-  constructor() {}
+  constructor(private userService: UserService) {
+    this.userService.populate();
+  }
   ngDoBootstrap() {}
 }
