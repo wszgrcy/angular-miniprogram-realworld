@@ -30,7 +30,7 @@ export class FavoriteButtonComponent {
   @Output() toggle = new EventEmitter<boolean>();
   isSubmitting = false;
   ngOnChanges(changes: SimpleChanges): void {
-    this.cd.detectChanges();
+    // this.cd.detectChanges();
   }
   toggleFavorite() {
     this.isSubmitting = true;
