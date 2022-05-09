@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { catchError, filter, switchMap, tap } from 'rxjs/operators';
 import { Article, User, Comment } from '../../models';
 import { ArticlesService, CommentsService, UserService } from '../../service';
-
+import { MiniProgramComponentInstance } from 'angular-miniprogram/platform/type';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -12,9 +12,13 @@ import { ArticlesService, CommentsService, UserService } from '../../service';
 })
 export class ArticleComponent implements OnInit {
   static mpPageOptions: WechatMiniprogram.Page.Options<{}, {}> = {
-    onLoad(this: ArticleComponent, query) {
-      this.ngZone.run(() => {
-        this.slug$.next(query.slug!);
+    onLoad(
+      this: WechatMiniprogram.Page.Instance<{}, {}> &
+        MiniProgramComponentInstance<ArticleComponent>,
+      query
+    ) {
+      this.__ngComponentInstance.ngZone.run(() => {
+        this.__ngComponentInstance.slug$.next(query.slug!);
       });
     },
   };
